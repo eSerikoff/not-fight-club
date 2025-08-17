@@ -8,6 +8,70 @@
     <title>Not Fight club</title>
 </head>
 <body>
-    
+    <div class="welcome">
+        <div class="welcomeContainer">
+            <span class="welcomeText">Welcome!</span>
+            <div class="registerForm">
+                <label class="registerFormLabel" for="playerName">Please, create your character</label>
+                <input class="registerFormInput" type="text" name="playerName" placeholder="Enter character name">
+            </div>
+            <button class="registerFormButton" disabled>Create character</button>
+        </div>
+    </div>
+    <div class="header">
+        <span class="headerLogo">Battle</span>
+        <nav>
+            <ul class="headerNav">
+                <li>
+                    <img class="navImgFight" src="source/img/icon/fight.jpg" alt="fight">
+                </li>
+                <li>
+                    <img class="navImgUser" src="source/img/icon/user.jpg" alt="user">
+                </li>
+                <li>
+                    <img class="navImgEdit" src="source/img/icon/edit.png" alt="edit">
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="fight">
+        <div class="fightPlayerEnemy">
+            <div class="fightPlayer">
+                <img class="playerAvatar" src="source/img/playerAvatar/berserk.jpg" alt="player Avatar">
+                <progress class="progressPlayerHealth" value="100" max="100"></progress>
+                <span class="playerHealtsText">100 / 100</span>
+            </div>
+            <div class="fightMainForm">
+                    <p>Please pick 1 Attack zone and 2 Defence zones</p>
+                    <div class="fightFormContainer">
+                        <div class="fightFormPlayer">
+                                <label><input class="playerChoise" type="checkbox" name="playerChoise" value="head">Head</label>
+                                <label><input class="playerChoise" type="checkbox" name="playerChoise" value="body">Body</label>
+                                <label><input class="playerChoise" type="checkbox" name="playerChoise" value="arms">Arms</label>
+                                <label><input class="playerChoise" type="checkbox" name="playerChoise" value="legs">Legs</label>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="fightFormEnemy">
+                                <label><input class="enemyChoise" type="checkbox" name="enemyChoise" value="head">Head</label>
+                                <label><input class="enemyChoise" type="checkbox" name="enemyChoise" value="body">Body</label>
+                                <label><input class="enemyChoise" type="checkbox" name="enemyChoise" value="arms">Arms</label>
+                                <label><input class="enemyChoise" type="checkbox" name="enemyChoise" value="legs">Legs</label>
+                        </div>
+                    </div>
+                    <button class="buttonAttack" disabled>Attack!</button>
+            </div>
+            <div class="fightEnemy">
+                <div class="fightEnemy">
+                <img class="enemyAvatar" src="source/img/EnemyAvatar/troll.jpg" alt="enemy Avatar">
+                <progress class="progressEnemyHealth" value="80" max="100"></progress>
+                <span class="enemyHealtsText">100 / 100</span>
+            </div>
+            </div>
+        </div>
+        <div class="fightLog">
+            тут будет лог боя
+        </div>
+    </div>
+
 </body>
 </html>

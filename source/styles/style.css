@@ -1,0 +1,162 @@
+:root {
+    --fontFamily: 'Times New Roman', Times, serif;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: var(--fontFamily);
+}
+.welcome {
+    width: 100vw;
+    height: 100vh;
+
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+.welcomeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.welcomeText {
+    font-size: 3em;
+    margin-bottom: 2rem;
+}
+.registerForm {
+    display: flex;
+    flex-direction: column;
+}
+.registerFormLabel {
+    font-size: 1.5em;
+    margin-bottom: 0.5rem;
+}
+.registerFormInput {
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+}
+.registerFormButton {
+    font-size: 2em;
+    padding: 5px 35px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.registerFormButton:disabled {
+    cursor: auto;
+}
+
+.header {
+    width: 95vw;
+    height: 5vh;
+    border-bottom: 2px solid #3f59e9;
+    margin-bottom: 2vh;
+
+    justify-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerNav {
+    display: flex;
+    
+    gap: 20px;
+}
+.headerNav li {
+    display: inline;
+    text-decoration: none;
+}
+.headerNav li img {
+    width: 25px;
+}
+.headerNav li img:first-child {
+    width: 25px;
+}
+.headerNav li img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.fight {
+    width: 95vw;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-bottom: 2vh;
+}
+.fightPlayerEnemy {
+    width: 100%;
+    height: 60%;
+    display: flex;
+}
+.fightPlayer,
+.fightMainForm,
+.fightEnemy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.3%;
+    height: 100%;
+}
+.fightPlayerEnemy img {
+    width: 300px;
+    height: 450px;
+    margin-bottom: 1vh;
+}
+progress {
+    width: 300px;
+    height: 20px;
+    background: fixed;
+}
+progress::-webkit-progress-bar {
+    background: rgb(145, 5, 5);
+}
+progress::-webkit-progress-value {
+    background: green;
+}
+.fightMainForm p {
+    font-size: 1.3em;
+    margin-bottom: 5vh;
+}
+.fightFormContainer {
+    font-size: 1.2em;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.fightFormPlayer,
+.fightFormEnemy {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    gap: 10px;
+}
+.fightFormPlayer input,
+.fightFormEnemy input {
+    margin-right: 1em;
+}
+.separator {
+    width: 1px;
+    height: 100%;
+    background-color: black;
+}
+.buttonAttack {
+    font-size: 2em;
+    font-weight: 100;
+    margin: 2em 0;
+    padding: 5px 30px;
+}
+
+
+
+
+
+.hidden {
+    display: none;
+}
