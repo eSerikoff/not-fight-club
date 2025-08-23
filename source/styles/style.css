@@ -12,8 +12,8 @@ body {
     width: 100vw;
     height: 100vh;
 
-    display: none;
-    /* display: flex; */
+    /* display: none; */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -83,19 +83,18 @@ body {
 
 .fight {
     width: 95vw;
-    height: 90vh;
+    height: 90%;
 
     display: flex;
     flex-direction: column;
     justify-self: center;
-    margin-bottom: 2vh;
 }
-.fightPlayerEnemy {
+.fightCharacterEnemy {
     width: 100%;
-    height: 60%;
+    height: 65%;
     display: flex;
 }
-.fightPlayer,
+.fightCharacter,
 .fightMainForm,
 .fightEnemy {
     display: flex;
@@ -104,9 +103,18 @@ body {
     width: 33.3%;
     height: 100%;
 }
-.fightPlayerEnemy img {
-    width: 300px;
-    height: 450px;
+.characterName, 
+.enemyName {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+.fightCharacterEnemy img {
+    max-width: 300px;
+    min-width: 210px;
+    width: 100%;
+    max-height: 450px;
+    min-height: 320px;
+    height: 100%;
     margin-bottom: 1vh;
 }
 progress {
@@ -130,14 +138,14 @@ progress::-webkit-progress-value {
     display: flex;
     justify-content: space-around;
 }
-.fightFormPlayer,
+.fightFormCharacter,
 .fightFormEnemy {
     display: flex;
     flex-direction: column;
     border: none;
     gap: 10px;
 }
-.fightFormPlayer input,
+.fightFormCharacter input,
 .fightFormEnemy input {
     margin-right: 1em;
 }
@@ -152,6 +160,75 @@ progress::-webkit-progress-value {
     margin: 2em 0;
     padding: 5px 30px;
 }
+.characterInfoContainer {
+    display: flex;
+    width: 95vw;
+    justify-self: center;
+    column-gap: 20px;
+}
+.characterInfo-data {
+    display: flex;
+    flex-direction: column;
+}
+.characterInfo-data p:nth-child(2){
+    color: green;
+}
+.characterInfo-data p:nth-child(3){
+    color: red;
+}
+
+.characterInfo-avatar .characterAvatar:hover {
+    opacity: 50%;
+}
+
+/* popup for choosing avatar */
+.characterInfo-ChooseAvatarbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.characterInfo-ChooseAvatar {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-20%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Avatar1:hover,
+.Avatar2:hover,
+.Avatar3:hover {
+    opacity: 70%;
+}
+
+.characterSettings {
+    width: 95vw;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.btnEdit,
+.btnSave,
+.btnCancel {
+    padding: 5px 20px;
+    margin-left: 15px;
+}
+.characterSettingsInput {
+    margin-left: 10px;
+    font-size: 1.2em;
+    font-family: var(--fontFamily);
+}
+
+
+
 
 
 

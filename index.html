@@ -12,13 +12,13 @@
         <div class="welcomeContainer">
             <span class="welcomeText">Welcome!</span>
             <div class="registerForm">
-                <label class="registerFormLabel" for="playerName">Please, create your character</label>
-                <input class="registerFormInput" type="text" name="playerName" placeholder="Enter character name">
+                <label class="registerFormLabel" for="characterName">Please, create your character</label>
+                <input class="registerFormInput" type="text" name="characterName" placeholder="Enter character name">
             </div>
             <button class="registerFormButton" disabled>Create character</button>
         </div>
     </div>
-    <div class="header">
+    <div class="header hidden">
         <span class="headerLogo">Battle</span>
         <nav>
             <ul class="headerNav">
@@ -34,21 +34,22 @@
             </ul>
         </nav>
     </div>
-    <div class="fight">
-        <div class="fightPlayerEnemy">
-            <div class="fightPlayer">
-                <img class="playerAvatar" src="source/img/playerAvatar/berserk.jpg" alt="player Avatar">
-                <progress class="progressPlayerHealth" value="100" max="100"></progress>
-                <span class="playerHealtsText">100 / 100</span>
+    <div class="fight hidden">
+        <div class="fightCharacterEnemy">
+            <div class="fightCharacter">
+                <span class="characterName">Name</span>
+                <img class="characterAvatar" src="source/img/playerAvatar/berserk.jpg" alt="character Avatar">
+                <progress class="progressCharacterHealth" value="100" max="100"></progress>
+                <span class="characterHealtsText">100 / 100</span>
             </div>
             <div class="fightMainForm">
                     <p>Please pick 1 Attack zone and 2 Defence zones</p>
                     <div class="fightFormContainer">
-                        <div class="fightFormPlayer">
-                                <label><input class="playerChoise" type="checkbox" name="playerChoise" value="head">Head</label>
-                                <label><input class="playerChoise" type="checkbox" name="playerChoise" value="body">Body</label>
-                                <label><input class="playerChoise" type="checkbox" name="playerChoise" value="arms">Arms</label>
-                                <label><input class="playerChoise" type="checkbox" name="playerChoise" value="legs">Legs</label>
+                        <div class="fightFormCharacter">
+                                <label><input class="characterChoise" type="checkbox" name="characterChoise" value="head">Head</label>
+                                <label><input class="characterChoise" type="checkbox" name="characterChoise" value="body">Body</label>
+                                <label><input class="characterChoise" type="checkbox" name="characterChoise" value="arms">Arms</label>
+                                <label><input class="characterChoise" type="checkbox" name="characterChoise" value="legs">Legs</label>
                         </div>
                         <div class="separator"></div>
                         <div class="fightFormEnemy">
@@ -61,17 +62,41 @@
                     <button class="buttonAttack" disabled>Attack!</button>
             </div>
             <div class="fightEnemy">
-                <div class="fightEnemy">
+                <span class="enemyName">Name</span>
                 <img class="enemyAvatar" src="source/img/EnemyAvatar/troll.jpg" alt="enemy Avatar">
-                <progress class="progressEnemyHealth" value="80" max="100"></progress>
+                <progress class="progressEnemyHealth" value="100" max="100"></progress>
                 <span class="enemyHealtsText">100 / 100</span>
-            </div>
             </div>
         </div>
         <div class="fightLog">
             тут будет лог боя
         </div>
     </div>
-
+    <div class="characterInfo hidden">
+        <div class="characterInfoContainer">
+            <div class="characterInfo-avatar">
+                <img class="characterAvatar" src="source/img/playerAvatar/berserk.jpg" alt="character Avatar">
+            </div>
+            <div class="characterInfo-data">
+                <span class="characterName">Name</span>
+                <p>Wins: <span class="characterWins">0</span></p>
+                <p>Loses: <span class="characterLoses">0</span></p>
+            </div>
+            <div class="characterInfo-ChooseAvatarbox">
+                <div class="characterInfo-ChooseAvatar">
+                    <img class="characterAvatar Avatar1" src="source/img/playerAvatar/berserk.jpg" alt="character Avatar">
+                    <img class="characterAvatar Avatar2" src="source/img/playerAvatar/man-crusader.jpg" alt="character Avatar">
+                    <img class="characterAvatar Avatar3" src="source/img/playerAvatar/woman-crusader.jpg" alt="character Avatar">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="characterSettings hidden">
+        <p>Character name: <span class="characterName">Name</span></p>
+        <input class="characterSettingsInput hidden" type="text">
+        <button class="btnEdit">Edit</button>
+        <button class="btnSave hidden">Save</button>
+        <button class="btnCancel hidden">Cancel</button>
+    </div>
 </body>
 </html>
