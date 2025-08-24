@@ -32,7 +32,7 @@ function randomInteger(min, max) {
 const enemies = [
     {
         name: 'Troll',
-        health: 120,
+        health: 140,
         attack: 12,
         avatar: 'source/img/EnemyAvatar/troll.jpg',
         countAttackArea: 1,
@@ -40,7 +40,7 @@ const enemies = [
     },
     {
         name: 'Golem',
-        health: 80,
+        health: 105,
         attack: 8,
         avatar: 'source/img/EnemyAvatar/golem.jpg',
         countAttackArea: 3,
@@ -48,7 +48,7 @@ const enemies = [
     },
     {
         name: 'Warewolf',
-        health: 105,
+        health: 115,
         attack: 10,
         avatar: 'source/img/EnemyAvatar/werewolf.jpg',
         countAttackArea: 2,
@@ -167,6 +167,7 @@ goFight.addEventListener('click', (e) => {
         dom_progressCharacterHealth.value = 150;
 
         localStorage.setItem('isBattleActive', true);
+        enemyNumber = NotRepeatEnemy();
         CreateNewEnemy(enemyNumber);
     }
 
@@ -367,7 +368,6 @@ function StartAttack() {
         dom_enemyHealth.textContent = enemyHealth;
         dom_progressEnemyHealth.value = enemyHealth;
 
-        addLogMessage(`${localStorage.getItem('characterName')} hit ${localStorage.getItem('enemyName')} for 12 dmg.`);
         addLogMessage(`${localStorage.getItem('characterName')} hit ${localStorage.getItem('enemyName')} for 12 dmg.`);
 
     } else {
