@@ -8,6 +8,9 @@
 body {
     font-family: var(--fontFamily);
 }
+button {
+    font-family: var(--fontFamily);
+}
 .welcome {
     width: 100vw;
     height: 100vh;
@@ -81,6 +84,15 @@ body {
     transform: scale(1.2);
 }
 
+.previewFight {
+    display: flex;
+    justify-content: center;
+}
+.goFight {
+    font-size: 2em;
+    padding: 20px 30px;
+}
+
 .fight {
     width: 95vw;
     height: 90%;
@@ -91,8 +103,9 @@ body {
 }
 .fightCharacterEnemy {
     width: 100%;
-    height: 65%;
+    height: 63vh;
     display: flex;
+    margin-bottom: 2vh;
 }
 .fightCharacter,
 .fightMainForm,
@@ -160,6 +173,13 @@ progress::-webkit-progress-value {
     margin: 2em 0;
     padding: 5px 30px;
 }
+
+.fightLog {
+    height: 25vh;
+    overflow-y: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+}
 .characterInfoContainer {
     display: flex;
     width: 95vw;
@@ -211,8 +231,20 @@ progress::-webkit-progress-value {
 .characterSettings {
     width: 95vw;
     display: flex;
+    flex-direction: column;
+    justify-self: center;
+    gap: 20px;
+}
+.characterSettingsGeneral {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     justify-self: center;
     align-items: center;
+}
+.resetAll {
+    font-size: .8em;
+    padding: 5px 10px;
 }
 
 .btnEdit,
@@ -220,6 +252,7 @@ progress::-webkit-progress-value {
 .btnCancel {
     padding: 5px 20px;
     margin-left: 15px;
+    font-size: 1em;
 }
 .characterSettingsInput {
     margin-left: 10px;
@@ -227,6 +260,12 @@ progress::-webkit-progress-value {
     font-family: var(--fontFamily);
 }
 
+.characterColor {
+    color: green;
+}
+.enemyColor {
+    color: red;
+}
 
 
 

@@ -8,7 +8,7 @@
     <title>Not Fight club</title>
 </head>
 <body>
-    <div class="welcome">
+    <div class="welcome hidden">
         <div class="welcomeContainer">
             <span class="welcomeText">Welcome!</span>
             <div class="registerForm">
@@ -34,16 +34,19 @@
             </ul>
         </nav>
     </div>
+    <div class="previewFight hidden">
+        <button class="goFight">Go Fight!</button>
+    </div>
     <div class="fight hidden">
         <div class="fightCharacterEnemy">
             <div class="fightCharacter">
                 <span class="characterName">Name</span>
                 <img class="characterAvatar" src="source/img/playerAvatar/berserk.jpg" alt="character Avatar">
-                <progress class="progressCharacterHealth" value="100" max="100"></progress>
-                <span class="characterHealtsText">100 / 100</span>
+                <progress class="progressCharacterHealth" value="150" max="150"></progress>
+                <p><span class="characterHealthText">150</span> / 150</p>
             </div>
             <div class="fightMainForm">
-                    <p>Please pick 1 Attack zone and 2 Defence zones</p>
+                    <p>Pick 1 Attack zone and 2 Defence zones</p>
                     <div class="fightFormContainer">
                         <div class="fightFormCharacter">
                                 <label><input class="characterChoise" type="checkbox" name="characterChoise" value="head">Head</label>
@@ -65,11 +68,10 @@
                 <span class="enemyName">Name</span>
                 <img class="enemyAvatar" src="source/img/EnemyAvatar/troll.jpg" alt="enemy Avatar">
                 <progress class="progressEnemyHealth" value="100" max="100"></progress>
-                <span class="enemyHealtsText">100 / 100</span>
+                <p class="totalEnemyHealth"><span class="enemyHealthText">100</span> / 100</p>
             </div>
         </div>
         <div class="fightLog">
-            тут будет лог боя
         </div>
     </div>
     <div class="characterInfo hidden">
@@ -79,8 +81,8 @@
             </div>
             <div class="characterInfo-data">
                 <span class="characterName">Name</span>
-                <p>Wins: <span class="characterWins">0</span></p>
-                <p>Loses: <span class="characterLoses">0</span></p>
+                <p>Wins: <span class="characterWinsText">0</span></p>
+                <p>Looses: <span class="characterLoosesText">0</span></p>
             </div>
             <div class="characterInfo-ChooseAvatarbox">
                 <div class="characterInfo-ChooseAvatar">
@@ -92,11 +94,16 @@
         </div>
     </div>
     <div class="characterSettings hidden">
-        <p>Character name: <span class="characterName">Name</span></p>
-        <input class="characterSettingsInput hidden" type="text">
-        <button class="btnEdit">Edit</button>
-        <button class="btnSave hidden">Save</button>
-        <button class="btnCancel hidden">Cancel</button>
+        <div class="characterSettingsGeneral">
+            <p>Character name: <span class="characterName">Name</span></p>
+            <input class="characterSettingsInput hidden" type="text">
+            <button class="btnEdit">Edit</button>
+            <button class="btnSave hidden">Save</button>
+            <button class="btnCancel hidden">Cancel</button>
+        </div>
+        <div class="characterSettingsReset">
+            <button class="resetAll">Reset All Characters data</button>
+        </div>
     </div>
 </body>
 </html>
