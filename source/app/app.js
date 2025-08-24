@@ -5,7 +5,6 @@ let characterHealth = +localStorage.getItem('characterHealth');
 let characterWins = +localStorage.getItem('characterWins');
 let characterLooses = +localStorage.getItem('characterLooses');
 
-
 let dom_headerLogo = document.querySelector('.headerLogo');
 
 let dom_characterNameAll = document.querySelectorAll('.characterName');
@@ -19,7 +18,6 @@ let dom_progressEnemyHealth = document.querySelector('.progressEnemyHealth');
 
 let enemyNumber = 0;
 localStorage.setItem('isBattleActive', false);
-let isBattleActive = localStorage.getItem('isBattleActive');
 let characterAttackChecked = [];
 let characterDefenceChecked = [];
 
@@ -77,7 +75,6 @@ function LoadCharacterAvatar() {
         .querySelector('.characterAvatar')
         .src = characterAvatars.get(localStorage.getItem('characterAvatar'));
 }
-
 // Первая установка аватарки персонажа (инициализация)
 function FirstLoadCharacterAvatar() {
     if (localStorage.getItem('characterAvatar') === null) {
@@ -162,7 +159,7 @@ goFight.addEventListener('click', (e) => {
         dom_progressEnemyHealth.value = localStorage.getItem('enemyHealth');
     } else {
         localStorage.setItem('characterHealth', 150);
-        
+
         dom_characterHealth.textContent = '150';
         dom_progressCharacterHealth.value = 150;
 
@@ -170,7 +167,6 @@ goFight.addEventListener('click', (e) => {
         enemyNumber = NotRepeatEnemy();
         CreateNewEnemy(enemyNumber);
     }
-
     document.querySelector('.previewFight').classList.add('hidden');
     document.querySelector('.fight').classList.remove('hidden');
 
@@ -214,7 +210,6 @@ const popup = document.querySelector('.characterInfo-ChooseAvatar');
 popupOverlay.addEventListener('click', (e) => {
     popupOverlay.style.display = 'none';
 })
-
 // выбор и установка аватарки
 const avatar1 = document.querySelector('.Avatar1');
 const avatar2 = document.querySelector('.Avatar2');
@@ -252,7 +247,6 @@ characterSettings.addEventListener('click', (e) => {
 })
 // Кнопка Edit
 document.querySelector('.btnEdit').addEventListener('click', (e) => {
-
     document.querySelector('.characterSettingsGeneral')
         .querySelector('.characterName').classList.add('hidden');
     document.querySelector('.btnEdit').classList.add('hidden');
@@ -314,10 +308,7 @@ battlePage.addEventListener('click', (e) => {
 
     dom_headerLogo.textContent = 'Battle';
 })
-
-
-
-// ALL ABOUT FIGHT
+// ********      ALL ABOUT FIGHT   *******
 const hitAreas = ['head', 'body', 'arms', 'legs'];
 let enemyAttackArea = [];
 let enemyDefenceArea = [];
@@ -356,10 +347,8 @@ function EnemyDefenseArea() {
     }
     addLogMessage(`Enemy's defense area: ${enemyDefenceArea}`);
 }
-
 // Атака
 function StartAttack() {
-
     //атака игрока и защита противника
     if (!enemyDefenceArea.includes(characterAttackArea[0])) {
         enemyHealth = +localStorage.getItem('enemyHealth');
@@ -374,7 +363,6 @@ function StartAttack() {
         addLogMessage(`${localStorage.getItem('enemyName')} blocked ${localStorage.getItem('characterName')} attack.`);
 
     }
-
     //атака противника и защита игрока
     let totalDmg = 0;
     let countAttacks = 0;
@@ -401,6 +389,8 @@ function StartAttack() {
         characterLooses += 1;
         localStorage.setItem('characterLooses', characterLooses);
         document.querySelector('.buttonAttack').disabled = true;
+        addLogMessage(`${localStorage.getItem('enemyName')} hit ${localStorage.getItem('characterName')} ${countAttacks} times and caused damage ${totalDmg}.`);
+        addLogMessage(`${localStorage.getItem('characterName')} blocked from ${localStorage.getItem('enemyName')} ${countDefense} attacks.`);
         alert('You are Loose!');
         EndGame();
     }
@@ -410,12 +400,11 @@ function StartAttack() {
         characterWins += 1;
         localStorage.setItem('characterWins', characterWins);
         document.querySelector('.buttonAttack').disabled = true;
+        addLogMessage(`${localStorage.getItem('enemyName')} hit ${localStorage.getItem('characterName')} ${countAttacks} times and caused damage ${totalDmg}.`);
+        addLogMessage(`${localStorage.getItem('characterName')} blocked from ${localStorage.getItem('enemyName')} ${countDefense} attacks.`);
         alert('You are Win!');
         EndGame();
     }
-
-    addLogMessage(`${localStorage.getItem('enemyName')} hit ${localStorage.getItem('characterName')} ${countAttacks} times and caused damage ${totalDmg}.`);
-    addLogMessage(`${localStorage.getItem('characterName')} blocked from ${localStorage.getItem('enemyName')} ${countDefense} attacks.`);
 }
 function EndGame() {
     localStorage.setItem('isBattleActive', false);
@@ -426,9 +415,7 @@ function EndGame() {
     document.querySelectorAll('input[type="checkbox"]').forEach(function (checkbox) {
         checkbox.checked = false;
     });
-
 }
-
 //Click Attack button
 document.querySelector('.buttonAttack').addEventListener('click', (e) => {
     // Места атаки и защиты персонажа
@@ -445,11 +432,10 @@ document.querySelector('.buttonAttack').addEventListener('click', (e) => {
     EnemyAttackArea();
     EnemyDefenseArea();
 
-
-    StartAttack();
     addLogMessage('********************');
+    StartAttack();
 })
-
+// Логирование боя
 function addLogMessage(message) {
     const logContainer = document.querySelector('.fightLog');
 
