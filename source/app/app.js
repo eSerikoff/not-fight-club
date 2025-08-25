@@ -381,6 +381,9 @@ function StartAttack() {
     localStorage.setItem('characterHealth', characterHealth)
     dom_characterHealth.textContent = characterHealth;
     dom_progressCharacterHealth.value = characterHealth;
+    
+    addLogMessage(`${localStorage.getItem('enemyName')} hit ${localStorage.getItem('characterName')} ${countAttacks} times and caused damage ${totalDmg}.`);
+    addLogMessage(`${localStorage.getItem('characterName')} blocked from ${localStorage.getItem('enemyName')} ${countDefense} attacks.`);
 
     if (+localStorage.getItem('characterHealth') <= 0) {
         console.log(+localStorage.getItem('characterHealth'));
@@ -389,8 +392,8 @@ function StartAttack() {
         characterLooses += 1;
         localStorage.setItem('characterLooses', characterLooses);
         document.querySelector('.buttonAttack').disabled = true;
-        addLogMessage(`${localStorage.getItem('enemyName')} hit ${localStorage.getItem('characterName')} ${countAttacks} times and caused damage ${totalDmg}.`);
-        addLogMessage(`${localStorage.getItem('characterName')} blocked from ${localStorage.getItem('enemyName')} ${countDefense} attacks.`);
+        // addLogMessage(`${localStorage.getItem('enemyName')} hit ${localStorage.getItem('characterName')} ${countAttacks} times and caused damage ${totalDmg}.`);
+        // addLogMessage(`${localStorage.getItem('characterName')} blocked from ${localStorage.getItem('enemyName')} ${countDefense} attacks.`);
         alert('You are Loose!');
         EndGame();
     }
@@ -400,8 +403,8 @@ function StartAttack() {
         characterWins += 1;
         localStorage.setItem('characterWins', characterWins);
         document.querySelector('.buttonAttack').disabled = true;
-        addLogMessage(`${localStorage.getItem('enemyName')} hit ${localStorage.getItem('characterName')} ${countAttacks} times and caused damage ${totalDmg}.`);
-        addLogMessage(`${localStorage.getItem('characterName')} blocked from ${localStorage.getItem('enemyName')} ${countDefense} attacks.`);
+        // addLogMessage(`${localStorage.getItem('enemyName')} hit ${localStorage.getItem('characterName')} ${countAttacks} times and caused damage ${totalDmg}.`);
+        // addLogMessage(`${localStorage.getItem('characterName')} blocked from ${localStorage.getItem('enemyName')} ${countDefense} attacks.`);
         alert('You are Win!');
         EndGame();
     }
@@ -431,9 +434,9 @@ document.querySelector('.buttonAttack').addEventListener('click', (e) => {
 
     EnemyAttackArea();
     EnemyDefenseArea();
-
-    addLogMessage('********************');
+    
     StartAttack();
+    addLogMessage('********************');
 })
 // Логирование боя
 function addLogMessage(message) {
